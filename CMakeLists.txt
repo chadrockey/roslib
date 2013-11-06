@@ -19,10 +19,6 @@ endif()
 add_library(roslib src/package.cpp)
 target_link_libraries(roslib ${Boost_LIBRARIES} ${catkin_LIBRARIES})
 
-if(NOT (APPLE OR WIN32 OR MINGW))
-  target_link_libraries(roslib rt)
-endif()
-
 
 if(CMAKE_HOST_UNIX)
   catkin_add_env_hooks(10.ros SHELLS sh DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/env-hooks)
